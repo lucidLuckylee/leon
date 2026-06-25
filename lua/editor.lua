@@ -35,6 +35,9 @@ require("lualine").setup({ options = { theme = {
 -- Colors
 require("colorizer").setup()
 
+-- Git signs in the gutter
+require("gitsigns").setup()
+
 -- Disable background colors for opacity
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })

@@ -46,12 +46,12 @@
               lualine-nvim
               undotree
               nvim-colorizer-lua
-              vim-fugitive
+              gitsigns-nvim
               vim-sleuth
               git-conflict-nvim
               vim-surround
 
-              dracula-vim
+              sonokai
               nvim-treesitter.withAllGrammars
 
               # Claude Code integration (from nixpkgs-unstable; not yet in 25.05)

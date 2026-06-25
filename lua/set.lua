@@ -19,8 +19,10 @@ vim.opt.undofile = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
-require('rich_red').colorscheme()
--- vim.cmd.colorscheme('dracula')
+vim.g.sonokai_style = 'shusia'              -- vibrant red/pink variant
+vim.g.sonokai_transparent_background = 1    -- match the rest of the transparent UI
+vim.g.sonokai_enable_italic = 1
+vim.cmd.colorscheme('sonokai')
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
