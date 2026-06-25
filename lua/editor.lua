@@ -36,7 +36,12 @@ require("lualine").setup({ options = { theme = {
 require("colorizer").setup()
 
 -- Git signs in the gutter
-require("gitsigns").setup()
+local gitsigns = require("gitsigns")
+gitsigns.setup()
+
+-- Navigate between changed hunks
+map("n", "<leader>gn", function() gitsigns.nav_hunk("next") end, { desc = "Next git hunk" })
+map("n", "<leader>gN", function() gitsigns.nav_hunk("prev") end, { desc = "Previous git hunk" })
 
 -- Disable background colors for opacity
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -51,6 +56,9 @@ vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
 vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = "none" })
+
+-- Grey out LSP inlay hints (rust_analyzer) instead of plain white
+vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#7f8490", bg = "none", italic = true })
 
 -- LSP
 vim.lsp.enable('rust_analyzer')
